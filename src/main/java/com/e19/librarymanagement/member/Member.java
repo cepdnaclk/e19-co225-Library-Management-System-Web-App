@@ -1,28 +1,23 @@
 package com.e19.librarymanagement.member;
 
-import jakarta.persistence.*;
-import lombok.*;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
-@ToString
-@Getter
-@Setter
-@EqualsAndHashCode
-@NoArgsConstructor(force = true)
 @Entity
 @Table
 public class Member {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private final Long id;
-    @Column
-    private final String firstName;
-    @Column
-    private final String lastName;
-    private final String address;
-    private final String email;
-    private final String password;
-    private final String birthDay;
-    private final Integer contact;
+    private Long id;
+
+    private String firstName;
+
+    private String lastName;
+    private String address;
+    private String email;
+    private String password;
+    private String birthDay;
+    private Integer contact;
 
     public Member(Long id, String firstName, String lastName, String address, String email, String password, String birthDay, Integer contact) {
         this.id = id;
@@ -35,6 +30,8 @@ public class Member {
         this.contact = contact;
     }
 
+    public Member() {
+    }
 
     public Long getId() {
         return id;
