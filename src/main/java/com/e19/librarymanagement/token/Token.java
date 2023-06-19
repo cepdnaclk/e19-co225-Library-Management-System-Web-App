@@ -1,7 +1,7 @@
 package com.e19.librarymanagement.token;
 
 
-import com.e19.librarymanagement.user.User;
+import com.e19.librarymanagement.models.User;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;

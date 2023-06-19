@@ -1,6 +1,6 @@
 package com.e19.librarymanagement.auth;
 
-import com.e19.librarymanagement.user.Role;
+import com.e19.librarymanagement.models.Role;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

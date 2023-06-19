@@ -2,12 +2,11 @@ package com.e19.librarymanagement.auth;
 
 
 import com.e19.librarymanagement.config.JwtService;
-import com.e19.librarymanagement.repository.UserRepository;
+import com.e19.librarymanagement.repositories.UserRepository;
 import com.e19.librarymanagement.token.Token;
 import com.e19.librarymanagement.token.TokenRepository;
 import com.e19.librarymanagement.token.TokenType;
-import com.e19.librarymanagement.user.Role;
-import com.e19.librarymanagement.user.User;
+import com.e19.librarymanagement.models.User;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -15,10 +14,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpHeaders;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.security.web.authentication.WebAuthenticationDetailsSource;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;

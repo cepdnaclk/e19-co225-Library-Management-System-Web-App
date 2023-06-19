@@ -1,4 +1,4 @@
-package com.e19.librarymanagement.user;
+package com.e19.librarymanagement.models;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;

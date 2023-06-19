@@ -1,7 +1,7 @@
 package com.e19.librarymanagement.controller;
 
 import com.e19.librarymanagement.dto.UserDto;
-import com.e19.librarymanagement.user.User;
+import com.e19.librarymanagement.models.User;
 import io.swagger.v3.oas.annotations.Hidden;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;

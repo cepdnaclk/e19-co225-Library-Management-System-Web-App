@@ -1,7 +1,7 @@
 package com.e19.librarymanagement.config;
 
 
-import com.e19.librarymanagement.repository.UserRepository;
+import com.e19.librarymanagement.repositories.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

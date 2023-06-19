@@ -1,4 +1,4 @@
-package com.e19.librarymanagement.user;
+package com.e19.librarymanagement.models;
 
 import com.e19.librarymanagement.token.Token;
 import jakarta.persistence.*;

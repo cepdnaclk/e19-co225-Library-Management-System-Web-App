@@ -1,4 +1,4 @@
-package com.e19.librarymanagement.user;
+package com.e19.librarymanagement.models;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-import static com.e19.librarymanagement.user.Permission.*;
+import static com.e19.librarymanagement.models.Permission.*;
 
 @RequiredArgsConstructor
 public enum Role {

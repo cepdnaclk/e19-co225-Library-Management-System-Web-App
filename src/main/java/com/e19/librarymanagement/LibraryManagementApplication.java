@@ -2,15 +2,13 @@ package com.e19.librarymanagement;
 
 import com.e19.librarymanagement.auth.AuthenticationService;
 import com.e19.librarymanagement.auth.RegisterRequest;
-import com.e19.librarymanagement.repository.UserRepository;
-import com.e19.librarymanagement.user.User;
 import com.github.javafaker.Faker;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
-import static com.e19.librarymanagement.user.Role.*;
+import static com.e19.librarymanagement.models.Role.*;
 
 @SpringBootApplication
 public class LibraryManagementApplication {

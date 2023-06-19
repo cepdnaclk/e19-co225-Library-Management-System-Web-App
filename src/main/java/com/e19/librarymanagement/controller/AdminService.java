@@ -1,9 +1,7 @@
 package com.e19.librarymanagement.controller;
 
-import com.e19.librarymanagement.auth.AuthenticationService;
-import com.e19.librarymanagement.auth.RegisterRequest;
-import com.e19.librarymanagement.repository.UserRepository;
-import com.e19.librarymanagement.user.User;
+import com.e19.librarymanagement.repositories.UserRepository;
+import com.e19.librarymanagement.models.User;
 import lombok.AllArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;

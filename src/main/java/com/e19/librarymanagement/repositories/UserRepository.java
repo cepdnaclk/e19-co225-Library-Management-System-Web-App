@@ -1,6 +1,6 @@
-package com.e19.librarymanagement.repository;
+package com.e19.librarymanagement.repositories;
 
-import com.e19.librarymanagement.user.User;
+import com.e19.librarymanagement.models.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
