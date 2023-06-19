@@ -6,6 +6,7 @@ import com.e19.librarymanagement.repository.UserRepository;
 import com.e19.librarymanagement.token.Token;
 import com.e19.librarymanagement.token.TokenRepository;
 import com.e19.librarymanagement.token.TokenType;
+import com.e19.librarymanagement.user.Role;
 import com.e19.librarymanagement.user.User;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.servlet.http.HttpServletRequest;

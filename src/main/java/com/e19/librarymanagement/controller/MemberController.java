@@ -11,13 +11,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/api/v1/management")
-@Tag(name = "Management")
+@RequestMapping("/api/v1/member")
+@Tag(name = "Member")
 public class MemberController {
 
 
     @Operation(
-            description = "Get endpoint for manager",
+            description = "Get endpoint for member",
             summary = "This is a summary for management get endpoint",
             responses = {
                     @ApiResponse(

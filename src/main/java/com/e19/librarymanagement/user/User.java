@@ -1,5 +1,6 @@
 package com.e19.librarymanagement.user;
 
+import com.e19.librarymanagement.token.Token;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -9,6 +10,7 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Collection;
+import java.util.List;
 
 @Data
 @Builder
@@ -28,50 +30,59 @@ public class User implements UserDetails {
             generator = "user_sequence"
     )
     @Column(
-            name = "id",
+            name = "user_id",
             updatable = false
     )
     private Integer id;
 
     @Column(
-            name = "first_name"
+            name = "first_name",
+            nullable = false
     )
     private String firstname;
 
     @Column(
-            name = "last_name"
+            name = "last_name",
+            nullable = false
     )
     private String lastname;
 
     @Column(
-            name = "address"
+            name = "address",
+            nullable = false
     )
     private String address;
 
     @Column(
             name = "email",
-            unique = true
+            unique = true,
+            nullable = false
     )
     private String email;
 
     @Column(
-            name = "password"
+            name = "password",
+            nullable = false
     )
     private String password;
 
     @Column(
-            name = "birth_day"
+            name = "birth_day",
+            nullable = false
     )
     private String birthday;
 
     @Column(
-            name = "contact"
+            name = "contact",
+            nullable = false
     )
     private Integer contact;
 
     @Enumerated(EnumType.STRING)
     private Role role;
 
+    @OneToMany(mappedBy = "user")
+    private List<Token> tokens;
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
