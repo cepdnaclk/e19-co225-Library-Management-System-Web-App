@@ -2,6 +2,8 @@ package com.e19.librarymanagement;
 
 import com.e19.librarymanagement.auth.AuthenticationService;
 import com.e19.librarymanagement.auth.RegisterRequest;
+import com.e19.librarymanagement.models.Book;
+import com.e19.librarymanagement.service.BookService;
 import com.github.javafaker.Faker;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -19,14 +21,15 @@ public class LibraryManagementApplication {
 
 	@Bean
 	public CommandLineRunner commandLineRunner(
-			AuthenticationService service
+			AuthenticationService service,
+			BookService bookservice
 	) {
 		return args -> {
-			userCreate(service);
+			userCreate(service, bookservice);
 		};
 	}
 
-		private static void userCreate(AuthenticationService service) {
+		private static void userCreate(AuthenticationService service, BookService bookService) {
 			var admin = RegisterRequest.builder()
 					.firstname("Admin")
 					.lastname("Admin")
@@ -41,7 +44,7 @@ public class LibraryManagementApplication {
 
 			Faker faker = new Faker();
 
-			for(int i=0; i<10; i++) {
+			for(int i=0; i<5; i++) {
 				String firstname = faker.name().firstName();
 				String lastname = faker.name().lastName();
 				String email = String.format("%s.%s@gmail.com", firstname, lastname);
@@ -61,6 +64,22 @@ public class LibraryManagementApplication {
 						.build();
 
 				service.register(user);
+			}
+
+			for(int i=0; i<5; i++){
+				String isbn = Integer.toString(faker.number().numberBetween(1000, 2344));
+				String author = faker.book().author();
+				String title = faker.book().title();
+				Integer pub_year = faker.number().numberBetween(1990, 2023);
+
+				Book book = Book.builder()
+						.author(author)
+						.ISBN(isbn)
+						.pub_year(pub_year)
+						.title(title)
+						.build();
+
+				bookService.addBook(book);
 			}
 		}
 	}
