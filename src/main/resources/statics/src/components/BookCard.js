@@ -9,7 +9,7 @@ const BookCard = (props) => {
     props.deleteBookHandler(id);
   };
 
-  return (
+  return (         
     <div className="item">
       <img className="ui avatar image" src={book} alt="book" />
       <div className="content-container">
