@@ -6,7 +6,7 @@ class AddBook extends React.Component {
     name: "",
     author: "",
     shelf: "",
-  };
+  };    
 
   add = (e) => {
     e.preventDefault();
