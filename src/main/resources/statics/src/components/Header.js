@@ -6,7 +6,7 @@ const Header = () => {
         <div className="ui fixed menu">
             <div className="ui container">
             <div
-      style={{
+      style={{       
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
