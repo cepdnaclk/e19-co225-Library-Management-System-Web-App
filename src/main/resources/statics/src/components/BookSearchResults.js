@@ -1,6 +1,6 @@
 import React from 'react';
 import BookCard from './BookCard';
-import "./MemberBookReservation.css";
+import './BookSearchResults.css';
 
 const BookSearchResults = ({ books, reserveHandler }) => {
   return (
@@ -24,4 +24,3 @@ const BookSearchResults = ({ books, reserveHandler }) => {
 };
 
 export default BookSearchResults;
-

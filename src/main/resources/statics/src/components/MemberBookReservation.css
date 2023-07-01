@@ -1,66 +1,106 @@
 .member-book-reservation {
-    margin-top: 20px;
-  }
-  
-  .member-book-reservation h2 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-  }
-  
-  .member-book-reservation form {
-    display: flex;
-    flex-direction: column;
-    width: 300px;
-  }
-  
-  .member-book-reservation label {
-    font-weight: bold;
-    margin-bottom: 5px;
-  }
-  
-  .member-book-reservation input {
-    padding: 8px;
-    margin-bottom: 10px;
-  }
-  
-  .member-book-reservation button {
-    padding: 10px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-  }
-  
-  .member-book-reservation button:hover {
-    background-color: #0056b3;
-  }
-  .member-book-reservation {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .input-group {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
-  }
-  
-  .input-group label {
-    margin-right: 10px;
-  }
-  
-  .success-message {
-    color: green;
-    margin-bottom: 10px;
-  }
-  
-  .error-message {
-    color: red;
-    margin-bottom: 10px;
-  }
-  
+  background-color: #f4f4f4;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-top: 50px;
+}
 
+h2 {
+  color: #2c7ad6;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
 
+.success-message {
+  color: green;
+  margin-bottom: 10px;
+}
 
+.error-message {
+  color: red;
+  margin-bottom: 10px;
+}
 
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.input-group {
+  margin-bottom: 15px;
+}
+
+label {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+input[type="text"] {
+  height: 40px;
+  width: 300px;
+  padding: 5px;
+  font-size: 16px;
+  border: 2px solid #2c7ad6;
+  border-radius: 4px;
+}
+
+button[type="submit"] {
+  height: 40px;
+  width: 100px;
+  background: #2c7ad6;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.book-list {
+  margin-top: 20px;
+}
+
+.book-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  margin-bottom: 10px;
+  background: #f7f7f7;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.book-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.book-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #2c7ad6;
+  margin-bottom: 5px;
+}
+
+.book-author {
+  font-size: 14px;
+  color: #888888;
+}
+
+.reserve-button {
+  height: 30px;
+  width: 80px;
+  background: #2c7ad6;
+  color: white;
+  font-size: 14px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.label-book-title {
+  color: rgb(3, 0, 0);
+  font-weight: bold;
+}

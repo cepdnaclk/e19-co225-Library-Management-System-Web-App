@@ -4,7 +4,6 @@ import "./MemberBookReservation.css";
 import BookList from "./BookList";
 import BookSearchResults from "./BookSearchResults";
 
-
 const MemberBookReservation = () => {
   const [reservationData, setReservationData] = useState({
     memberId: "",
@@ -45,16 +44,16 @@ const MemberBookReservation = () => {
     const filteredBooks = books.filter((book) =>
       book.title.toLowerCase().includes(reservationData.bookTitle.toLowerCase())
     );
-  
+
     // Filter the available books from the filtered books list
     const availableBooks = filteredBooks.filter((book) => book.status === "Available");
-  
+
     setAvailableBooks(availableBooks);
 
     // Navigate to the search results page
     navigate("/book-search-results");
   };
-  
+
   const handleReservation = (bookId) => {
     // Find the selected book from the availableBooks list based on the bookId
     const selectedBook = availableBooks.find((book) => book.id === bookId);
@@ -78,7 +77,7 @@ const MemberBookReservation = () => {
             return {
               ...book,
               copies: updatedCopies,
-              status: updatedStatus,
+              status: updatedStatus
             };
           }
           return book;
@@ -110,7 +109,9 @@ const MemberBookReservation = () => {
       {error && <p className="error-message">{error}</p>}
       <form onSubmit={handleSearch}>
         <div className="input-group">
-          <label htmlFor="bookTitle">Book Title:</label>
+          <label className="label-book-title" htmlFor="bookTitle">
+            Book Title<br></br>  
+          </label>
           <input
             type="text"
             id="bookTitle"
@@ -119,6 +120,7 @@ const MemberBookReservation = () => {
             onChange={handleInputChange}
             required
           />
+          <div className="background-rectangle"></div>
         </div>
         <button type="submit">Search</button>
       </form>
