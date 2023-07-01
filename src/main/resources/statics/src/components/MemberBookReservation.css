@@ -1,0 +1,66 @@
+.member-book-reservation {
+    margin-top: 20px;
+  }
+  
+  .member-book-reservation h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+  
+  .member-book-reservation form {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+  }
+  
+  .member-book-reservation label {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .member-book-reservation input {
+    padding: 8px;
+    margin-bottom: 10px;
+  }
+  
+  .member-book-reservation button {
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .member-book-reservation button:hover {
+    background-color: #0056b3;
+  }
+  .member-book-reservation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .input-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .input-group label {
+    margin-right: 10px;
+  }
+  
+  .success-message {
+    color: green;
+    margin-bottom: 10px;
+  }
+  
+  .error-message {
+    color: red;
+    margin-bottom: 10px;
+  }
+  
+
+
+
+

@@ -6,6 +6,9 @@ import AddBook from './AddBook';
 import BookList from './BookList';
 import { Login } from './Login';
 import { Register } from './Register';
+import MemberBookReservation from './MemberBookReservation';
+import BookSearchResults from "./BookSearchResults";
+
 
 function App() {
   const LOCAL_STORAGE_KEY = "books";
@@ -48,6 +51,8 @@ function App() {
             <Routes>
               <Route path="/addbook" element={<AddBook addBookHandler={addBookHandler} />} />
               <Route path="/booklist" element={<BookList books={books} deleteBookHandler={deleteBookHandler} />} />
+              <Route path="/memberbookreservation" element={<MemberBookReservation />} />
+              <Route path="/book-search-results" component={BookSearchResults} />
               <Route path="/" element={
                 currentForm === "login"
                   ? <Login onFormSwitch={toggleForm} />
