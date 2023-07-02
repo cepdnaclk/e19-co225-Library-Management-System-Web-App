@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import EmailForm from "./EmailForm";
+
 
 export const Register = (props) => {
     const [email, setEmail] = useState('');
