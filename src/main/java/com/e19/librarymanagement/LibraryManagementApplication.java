@@ -31,16 +31,28 @@ public class LibraryManagementApplication {
 
 		private static void userCreate(AuthenticationService service, BookService bookService) {
 			var admin = RegisterRequest.builder()
-					.firstname("Admin")
+					.firstname("Librarian")
 					.lastname("Admin")
-					.email("admin@mail.com")
-					.password("password")
+					.email("library@gmail.com")
+					.password("1234")
 					.address("admin")
 					.contact(10001)
 					.birthday("no_birthday")
-					.role(ADMIN)
+					.role(LIBRARIAN)
 					.build();
-			System.out.println("Admin token: " + service.register(admin).getAccessToken());
+			System.out.println("Librarian token: " + service.register(admin).getAccessToken());
+
+			var user1 = RegisterRequest.builder()
+					.firstname("Akash")
+					.lastname("Muthumal")
+					.email("akash@gmail.com")
+					.password("1234")
+					.address("admin")
+					.contact(1223)
+					.birthday("no_birthday")
+					.role(MEMBER)
+					.build();
+			System.out.println("Member token: " + service.register(user1).getAccessToken());
 
 			Faker faker = new Faker();
 
@@ -77,6 +89,7 @@ public class LibraryManagementApplication {
 						.ISBN(isbn)
 						.pub_year(pub_year)
 						.title(title)
+						.available(true)
 						.build();
 
 				bookService.addBook(book);

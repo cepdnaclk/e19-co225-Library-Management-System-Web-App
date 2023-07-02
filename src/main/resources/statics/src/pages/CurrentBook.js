@@ -1,68 +1,67 @@
-import React, { useState } from 'react';
-import './css/CurrentBook.css';
+import React, { useState, useEffect } from 'react';
+import './css/MemberSearchBook.css';
 import { useNavigate } from 'react-router-dom';
 
 export const CurrentBook = () => {
-  const [searchQuery, setSearchQuery] = useState('');
-  const [searchResults, setSearchResults] = useState([]);
+
+    useEffect(() => {
+        handleSearch();
+      }, []);
+
+  const [searchResults, setSearchResults] = useState('');
 
   const navigate = useNavigate();
 
-  const handleSearchQueryChange = (event) => {
-    setSearchQuery(event.target.value);
-  };
-
   const handleSearch = () => {
-    // Make the API call with the search query and update the search results state
-    // Replace the code below with your actual API call
-    const mockSearchResults = [
-      { title: 'Book 1', author: 'Author 1' },
-      { title: 'Book 2', author: 'Author 2' },
-      { title: 'Book 3', author: 'Author 3' },
-    ];
+    const token = localStorage.getItem('accessToken');
+    const email = localStorage.getItem('email');
 
-    setSearchResults(mockSearchResults);
+    console.log(email);
+    
+    fetch('http://localhost:8080/api/v1/borrowing/' + email, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${token}`
+      }
+    })
+      .then(response => response.json())
+      .then(data => {
+        // Save the data in the array
+        setSearchResults(data);
+        console.log(data);
+      })
+      .catch(error => {
+        window.alert(error)
+      });
   };
 
   const handleBack = () => {
-    setSearchQuery('');
     setSearchResults([]);
+    navigate('/member')
   };
 
   return (
     <div>
-      <div className="back-button" onClick={() => navigate('/member')}>
+      <div className="back-button" onClick={handleBack}>
         Back
       </div>
-      <div className="search-container">
-        <input
-          type="text"
-          placeholder="Enter book title"
-          value={searchQuery}
-          onChange={handleSearchQueryChange}
-        />
-        <button className="search-button" onClick={handleSearch}>
-          Search
-        </button>
-      </div>
-      {searchResults.length > 0 && (
         <table className="search-results-table">
           <thead>
             <tr>
-              <th>Title</th>
-              <th>Author</th>
+              <th>Email</th>
+              <th>Book Title</th>
+              <th>Borrowed Date</th>
+              <th>Due Date</th>
             </tr>
           </thead>
           <tbody>
-            {searchResults.map((result, index) => (
-              <tr key={index}>
-                <td>{result.title}</td>
-                <td>{result.author}</td>
-              </tr>
-            ))}
+            <td>{searchResults.userEmail}</td>
+            <td>{searchResults.bookTitle}</td>
+            <td>{searchResults.borrowedDate}</td>
+            <td>{searchResults.dueDate}</td>
           </tbody>
         </table>
-      )}
     </div>
   );
 };

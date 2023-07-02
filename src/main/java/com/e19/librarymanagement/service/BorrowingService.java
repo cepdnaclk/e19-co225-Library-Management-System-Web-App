@@ -31,6 +31,8 @@ public class BorrowingService {
         User user = userRepository.findByEmail(borrowingDto.getUserEmail()).orElseThrow();
         Book book = bookRepository.findBookByTitle(borrowingDto.getBookTitle()).orElseThrow();
 
+        book.setAvailable(false);
+
         Borrowing borrowing = Borrowing
                 .builder()
                 .user(user)
@@ -53,6 +55,14 @@ public class BorrowingService {
 
         return  borrowingDtos;
     }
+
+    public BorrowingDto getBorrowingByEmail(String Email){
+        User user = userRepository.findByEmail(Email).orElseThrow();
+        Borrowing borrowing = borrowingRepository.findByUser(user).orElseThrow();
+        BorrowingDto borrowingDto = dtoCreate(borrowing);
+        return  borrowingDto;
+    }
+
 
     public BorrowingDto dtoCreate(Borrowing borrowing){
         BorrowingDto borrowingDto = new BorrowingDto();

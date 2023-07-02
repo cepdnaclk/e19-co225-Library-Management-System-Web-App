@@ -2,6 +2,7 @@ package com.e19.librarymanagement.dto;
 
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 @Getter
 @Setter

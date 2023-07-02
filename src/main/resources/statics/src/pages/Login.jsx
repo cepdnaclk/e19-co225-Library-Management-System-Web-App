@@ -12,20 +12,30 @@ export const Login = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log(email);
+        localStorage.setItem('email', email);
 
         const formData = {
             email: email,
             password: pass
           };
         
-          axios.post('http://localhost:8080/api/v1/auth/authenticate', formData)
+          axios.post('http://192.168.8.110:8080/api/v1/auth/authenticate', formData)
             .then(response => {
               console.log(response.data);
 
                 const accessToken = response.data.access_token;
+                const user = response.data.user;
+
                 if (accessToken) {
                     localStorage.setItem('accessToken', accessToken);
-                    navigate('/member');
+
+                    if(user==='MEMBER'){
+                        navigate('/member');
+                    }
+
+                    if(user==='LIBRARIAN'){
+                        navigate('/librarian');
+                    }            
                 }
             })
             .catch(error => {
@@ -47,7 +57,7 @@ export const Login = () => {
                         <input value={email} onChange={(e) => setEmail(e.target.value)} type="email" placeholder="Email" />
                         <input value={pass} onChange={(e) => setPass(e.target.value)} type="password" placeholder="Password" />
                         <br></br>
-                        <button type="submit">Sign In</button>
+                        <button className="sign-in" type="submit">Sign In</button>
                     </form>
                 </div>
                 <div className="overlay-container">

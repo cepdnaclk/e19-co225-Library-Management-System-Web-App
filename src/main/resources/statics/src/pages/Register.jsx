@@ -31,10 +31,19 @@ export const Register = () => {
             .then(response => {
               // Handle the response from the API
               console.log(response.data);
+
+                const accessToken = response.data.access_token;
+                const user = response.data.user;
+
+                if (accessToken && user==='MEMBER') {
+                    localStorage.setItem('accessToken', accessToken);
+                    navigate('/member');
+                }
             })
             .catch(error => {
               // Handle any errors that occurred during the request
               console.error(error);
+              window.alert(error);
             });
     }
 
@@ -44,7 +53,7 @@ export const Register = () => {
                 <div className="form-container sign-in-container">
                     <form className="form" onSubmit={handleSubmit}>
                         <h1 className="heading-register">Register</h1>
-                        <input value={email} onChange={(e) => setEmail(e.target.value)} type="email" placeholder="Email" />
+                        <input value={email} onChange={(e) => setEmail(e.target.value)} type="email" placeholder="Email" required/>
                         <input value={pass} onChange={(e) => setPass(e.target.value)} type="password" placeholder="Password" />
                         <input value={firstname} onChange={(e) => setFirstName(e.target.value)} type="text" placeholder="First Name" />
                         <input value={lastname} onChange={(e) => setLastName(e.target.value)} type="text" placeholder="Last Name" />

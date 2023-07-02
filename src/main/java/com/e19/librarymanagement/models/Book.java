@@ -41,4 +41,10 @@ public class Book {
     )
     private Integer pub_year;
 
+    @Column(
+            name = "is_available",
+            nullable = false
+    )
+    private boolean available;
+
 }
