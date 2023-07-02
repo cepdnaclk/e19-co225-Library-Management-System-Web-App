@@ -1,13 +1,12 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
-
 const EmailForm = () => {
     const [email, setEmail] = useState('');
     const [subject, setSubject] = useState('');
     const [content, setContent] = useState('');
 
-    const handleSubmit = async(e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         try {
             const response = await axios.post('/api/send-email', {
@@ -55,5 +54,3 @@ const EmailForm = () => {
         </div>
     );
 };
-
-export default EmailForm;
