@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import EmailForm from "./EmailForm";
 
 export const Register = (props) => {
     const [email, setEmail] = useState('');
@@ -23,6 +24,8 @@ export const Register = (props) => {
             <button type="submit">Register</button>
         </form>
         <button className="link-btn" onClick={() => props.onFormSwitch('login')}>Already have an account? Login here.</button>
+        {/* Add the EmailForm component */}
+      <EmailForm />
     </div>
-    )
-}
+    );
+};
