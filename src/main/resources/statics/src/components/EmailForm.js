@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
+import axios from 'axios';
+
 
 const EmailForm = () => {
     const [email, setEmail] = useState('');
     const [subject, setSubject] = useState('');
     const [content, setContent] = useState('');
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async(e) => {
         e.preventDefault();
         try {
             const response = await axios.post('/api/send-email', {
@@ -14,10 +16,13 @@ const EmailForm = () => {
                 content,
             });
             console.log(response.data);
-            // Add any success handling logic
+            alert('Email sent successfully!');
+            setEmail('');
+            setSubject('');
+            setContent('');
         } catch (error) {
             console.error(error);
-            // Add any error handling logic
+            alert('Error sending email. Please try again.');
         }
     };
 
