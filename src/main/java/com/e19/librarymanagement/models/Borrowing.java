@@ -17,7 +17,7 @@ public class Borrowing {
     @SequenceGenerator(
             name = "borrowing_sequence",
             sequenceName = "borrowing_sequence",
-            allocationSize = 5
+            allocationSize = 1
     )
     @GeneratedValue(
             strategy = GenerationType.SEQUENCE,
@@ -27,6 +27,7 @@ public class Borrowing {
             name = "borrowing_id",
             updatable = false
     )
+
     private Integer borrowingId;
 
     @OneToOne

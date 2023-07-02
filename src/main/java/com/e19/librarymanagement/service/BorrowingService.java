@@ -1,6 +1,4 @@
 package com.e19.librarymanagement.service;
-
-import com.e19.librarymanagement.dto.BookDto;
 import com.e19.librarymanagement.dto.BorrowingDto;
 import com.e19.librarymanagement.models.Book;
 import com.e19.librarymanagement.models.Borrowing;
@@ -33,6 +31,8 @@ public class BorrowingService {
         User user = userRepository.findByEmail(borrowingDto.getUserEmail()).orElseThrow();
         Book book = bookRepository.findBookByTitle(borrowingDto.getBookTitle()).orElseThrow();
 
+        book.setAvailable(false);
+
         Borrowing borrowing = Borrowing
                 .builder()
                 .user(user)
@@ -56,6 +56,14 @@ public class BorrowingService {
         return  borrowingDtos;
     }
 
+    public BorrowingDto getBorrowingByEmail(String Email){
+        User user = userRepository.findByEmail(Email).orElseThrow();
+        Borrowing borrowing = borrowingRepository.findByUser(user).orElseThrow();
+        BorrowingDto borrowingDto = dtoCreate(borrowing);
+        return  borrowingDto;
+    }
+
+
     public BorrowingDto dtoCreate(Borrowing borrowing){
         BorrowingDto borrowingDto = new BorrowingDto();
         borrowingDto.setBorrowingId(borrowing.getBorrowingId());
@@ -66,6 +74,4 @@ public class BorrowingService {
 
         return borrowingDto;
     }
-
-
 }

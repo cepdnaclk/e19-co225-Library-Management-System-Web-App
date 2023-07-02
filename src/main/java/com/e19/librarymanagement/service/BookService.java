@@ -44,6 +44,18 @@ public class BookService {
         bookRepository.deleteById(isbn);
     }
 
+    public void addBook(BookDto bookDto){
+        Book book = Book.builder()
+                .available(true)
+                .ISBN(bookDto.getIsbn())
+                .author(bookDto.getAuthor())
+                .pub_year(bookDto.getPub_year())
+                .title(bookDto.getTitle())
+                .build();
+
+        bookRepository.save(book);
+    }
+
     public void addBook(Book book){
         bookRepository.save(book);
     }
@@ -54,6 +66,7 @@ public class BookService {
         bookDto.setIsbn(book.getISBN());
         bookDto.setPub_year(book.getPub_year());
         bookDto.setTitle(book.getTitle());
+        bookDto.setAvailable(book.isAvailable());
 
         return bookDto;
     }

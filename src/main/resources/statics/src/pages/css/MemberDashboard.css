@@ -1,0 +1,25 @@
+.dashboard {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+  
+  .button {
+    width: 400px;
+    height: 200px;
+    background-color: #2196f3;
+    color: #ffffff;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 200px;
+    margin: 10px;
+    cursor: pointer;
+  }
+  
+  .button:hover {
+    background-color: #0d47a1;
+  }
+  
