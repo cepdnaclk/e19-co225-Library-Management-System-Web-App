@@ -6,11 +6,13 @@ class AddBook extends React.Component {
     name: "",
     author: "",
     shelf: "",
+    bookphoto: "",
+    
   };
 
   add = (e) => {
     e.preventDefault();
-    if (this.state.name === "" || this.state.author === "" || this.state.shelf === "") {
+    if (this.state.name === "" || this.state.author === "" || this.state.shelf === "",this.state.photo === "") {
       alert("All the fields are mandatory!");
       return;
     }
@@ -19,10 +21,11 @@ class AddBook extends React.Component {
       name: this.state.name,
       author: this.state.author,
       shelf: this.state.shelf,
+      bookphoto: this.state.bookphoto,
     };
 
     this.props.addBookHandler(newBook);
-    this.setState({ name: "", author: "", shelf: "" });
+    this.setState({ name: "", author: "", shelf: "",bookphoto: "" });
   };
 
   render() {
@@ -49,6 +52,10 @@ class AddBook extends React.Component {
           <div className="field">
             <label>Shelf Number</label>
             <input type="int" name="shelf" placeholder="Shelf Number" value={this.state.shelf} onChange={(e) => this.setState({ shelf: e.target.value })} />
+          </div>
+          <div className="field">
+            <label>Shelf Number</label>
+            <input type="int" name="bookphoto" placeholder="bookphoto" value={this.state.shelf} onChange={(e) => this.setState({ bookphoto: e.target.value })} />
           </div>
           <div>
           <button type="submit">Add</button>
