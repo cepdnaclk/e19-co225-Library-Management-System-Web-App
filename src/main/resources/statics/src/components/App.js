@@ -6,7 +6,6 @@ import AddBook from './AddBook';
 import BookList from './BookList';
 import { Login } from './Login';
 import { Register } from './Register';
-import EmailForm from './EmailForm';
 
 
 function App() {
@@ -57,8 +56,6 @@ function App() {
               } />
             </Routes>
           </div>
-  {/* Add the EmailForm component */}
-          <EmailForm />
         </Router>
       </div>
     </div>
