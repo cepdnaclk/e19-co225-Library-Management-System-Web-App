@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "./MemberBookReservation.css";
 import BookList from "./BookList";
-import BookSearchResults from "./BookSearchResults";
 
 const MemberBookReservation = () => {
   const [reservationData, setReservationData] = useState({
@@ -110,13 +109,37 @@ const MemberBookReservation = () => {
       <form onSubmit={handleSearch}>
         <div className="input-group">
           <label className="label-book-title" htmlFor="bookTitle">
-            Book Title<br></br>  
+            Book Title<br></br>
           </label>
           <input
             type="text"
             id="bookTitle"
             name="bookTitle"
             value={reservationData.bookTitle}
+            onChange={handleInputChange}
+            required
+          />
+          <div className="background-rectangle"></div>
+        </div>
+        <div className="input-group">
+          <label className="label-member-detail" htmlFor="memberId">Member ID<br></br></label>
+          <input
+            type="text"
+            id="memberId"
+            name="memberId"
+            value={reservationData.memberId}
+            onChange={handleInputChange}
+            required
+          />
+          <div className="background-rectangle"></div>
+        </div>
+        <div className="input-group">
+          <label className="label-member-detail" htmlFor="memberName">Member Name<br></br></label>
+          <input
+            type="text"
+            id="memberName"
+            name="memberName"
+            value={reservationData.memberName}
             onChange={handleInputChange}
             required
           />
