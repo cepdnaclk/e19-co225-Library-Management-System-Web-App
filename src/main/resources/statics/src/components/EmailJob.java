@@ -95,7 +95,7 @@ public class EmailJob implements Job {
                     }
                 }
             }
-        } catch (Exception e) {
+        } catch (MessagingException e) {
             // Handle any exceptions or errors that occur during the process
             e.printStackTrace();
         }
@@ -106,6 +106,7 @@ public class EmailJob implements Job {
         Properties properties = new Properties();
         properties.put("mail.smtp.host", "your_smtp_host");
         properties.put("mail.smtp.port", "your_smtp_port");
+        properties.put("mail.smtp.auth", "true");
 
         // Create a Session with authentication credentials
         Session session = Session.getInstance(properties, new Authenticator() {
@@ -119,7 +120,7 @@ public class EmailJob implements Job {
             // Create a new email message
             Message message = new MimeMessage(session);
             message.setFrom(new InternetAddress("your_email"));
-            message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(recipientEmail));
+            message.setRecipients(Message.RecipientType.TO,new InternetAddress.parse(recipientEmail));
             message.setSubject("Library Book Due Date Reminder");
             message.setText("Dear User,\n\nThis is a reminder that the book \"" + bookTitle +
                     "\" is due tomorrow (" + dueDate.toString() + ").\n\nPlease return the book to the library.\n\nBest regards,\nThe Library Team");
