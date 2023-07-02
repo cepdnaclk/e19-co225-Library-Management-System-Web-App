@@ -7,9 +7,18 @@ const EmailForm = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-
-        // Make an API request to the backend to trigger email scheduling
-        // Pass the necessary data (email, subject, content) as part of the request
+        try {
+            const response = await axios.post('/api/send-email', {
+                email,
+                subject,
+                content,
+            });
+            console.log(response.data);
+            // Add any success handling logic
+        } catch (error) {
+            console.error(error);
+            // Add any error handling logic
+        }
     };
 
     return (
