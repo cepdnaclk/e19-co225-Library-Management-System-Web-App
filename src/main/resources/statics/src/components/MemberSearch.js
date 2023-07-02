@@ -10,7 +10,7 @@ const MemberSearch = () => {
     <div className={showContainer ? "container" : ""}>
       <div className="search-container">
         {showContainer && (
-          <p className="message">Member Details</p>
+          <p className="message">Librarian Member Searching: <span>Member Details</span></p>
         )}
 
         <div className="center-content">

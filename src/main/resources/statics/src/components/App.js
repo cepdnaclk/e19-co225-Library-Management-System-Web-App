@@ -49,12 +49,12 @@ function App() {
             <Routes>
               <Route path="/addbook" element={<AddBook addBookHandler={addBookHandler} />} />
               <Route path="/booklist" element={<BookList books={books} deleteBookHandler={deleteBookHandler} />} />
+              <Route path="/membersearch" element={<MemberSearch />} />
               <Route path="/" element={
                 currentForm === "login"
                   ? <Login onFormSwitch={toggleForm} />
                   : <Register onFormSwitch={toggleForm} />
               } />
-              <Route path="/membersearch" element={<MemberSearch membersData={membersData} />} />
             </Routes>
           </div>
         </Router>
