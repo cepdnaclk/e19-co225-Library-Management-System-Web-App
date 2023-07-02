@@ -8,6 +8,11 @@ const EmailForm = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        if (!email || !subject || !content) {
+            alert('Please fill in all fields.');
+            return;
+        }
+
         try {
             const response = await axios.post('/api/send-email', {
                 email,
@@ -54,3 +59,6 @@ const EmailForm = () => {
         </div>
     );
 };
+
+export default EmailForm;
+
