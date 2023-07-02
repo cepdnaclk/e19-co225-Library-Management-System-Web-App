@@ -4,6 +4,7 @@ import './App.css';
 import Header from './Header';
 import AddBook from './AddBook';
 import BookList from './BookList';
+import MemberSearch from './MemberSearch';
 import { Login } from './Login';
 import { Register } from './Register';
 
@@ -53,6 +54,7 @@ function App() {
                   ? <Login onFormSwitch={toggleForm} />
                   : <Register onFormSwitch={toggleForm} />
               } />
+              <Route path="/membersearch" element={<MemberSearch membersData={membersData} />} />
             </Routes>
           </div>
         </Router>
