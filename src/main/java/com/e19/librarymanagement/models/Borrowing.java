@@ -27,15 +27,15 @@ public class Borrowing {
             name = "borrowing_id",
             updatable = false
     )
-    private  Integer Id;
 
-    @ManyToOne
+    private Integer borrowingId;
+
+    @OneToOne
     @JoinColumn(
-            name = "user_id",
-            nullable = false,
+            name = "member_id",
             referencedColumnName = "user_id",
             foreignKey = @ForeignKey(
-                    name = "borrowing_fk"
+                    name = "member_id_fk"
             )
     )
     private User user;
@@ -43,23 +43,21 @@ public class Borrowing {
     @OneToOne
     @JoinColumn(
             name = "book_id",
-            nullable = false,
             referencedColumnName = "isbn",
             foreignKey = @ForeignKey(
-                    name = "book_fk"
+                    name = "book_id_fk"
             )
     )
     private Book book;
 
     @Column(
-            name = "borrowing_date",
-            nullable = false
+            name = "borrowed_date",
+            updatable = false
     )
-    private String borrowingDate;
+    private String borrowedDate;
 
     @Column(
-            name = "due_date",
-            nullable = false
+            name = "due_date"
     )
     private String dueDate;
 

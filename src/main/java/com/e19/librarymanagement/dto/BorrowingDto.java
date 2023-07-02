@@ -1,7 +1,5 @@
 package com.e19.librarymanagement.dto;
 
-import com.e19.librarymanagement.models.Book;
-import com.e19.librarymanagement.models.User;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -9,10 +7,9 @@ import lombok.Setter;
 @Setter
 public class BorrowingDto {
 
-    private Integer id;
-    private User user;
-    private Book book;
-    private String borrowingDate;
+    private Integer borrowingId;
+    private String userEmail;
+    private String bookTitle;
+    private String borrowedDate;
     private String dueDate;
-
 }
