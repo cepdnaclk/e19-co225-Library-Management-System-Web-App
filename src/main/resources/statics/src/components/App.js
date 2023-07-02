@@ -6,6 +6,8 @@ import AddBook from './AddBook';
 import BookList from './BookList';
 import { Login } from './Login';
 import { Register } from './Register';
+import EmailForm from './EmailForm';
+
 
 function App() {
   const LOCAL_STORAGE_KEY = "books";
