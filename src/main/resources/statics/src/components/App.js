@@ -57,6 +57,8 @@ function App() {
               } />
             </Routes>
           </div>
+  {/* Add the EmailForm component */}
+          <EmailForm />
         </Router>
       </div>
     </div>
