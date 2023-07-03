@@ -33,7 +33,6 @@ public class EmailScheduler {
     }
 
     public static class EmailJob implements Job {
-
         // Method to retrieve the list of users from the database or data source
         private List<User> getUserList() {
             List<User> userList = new ArrayList<>();
@@ -47,16 +46,21 @@ public class EmailScheduler {
                 // Create a database connection
                 connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/library", "root", "");
 
-                // Execute a query to fetch users
+                // Execute a query to fetch users and their borrowed books
                 statement = connection.createStatement();
-                resultSet = statement.executeQuery("SELECT * FROM users");
+                resultSet = statement.executeQuery("SELECT u.username, u.email, b.title, b.due_date " +
+                        "FROM users u INNER JOIN books b ON u.id = b.user_id");
 
-                // Iterate over the result set and create User objects
+                // Iterate over the result set and create User and Book objects
                 while (resultSet.next()) {
                     String username = resultSet.getString("username");
                     String email = resultSet.getString("email");
+                    String bookTitle = resultSet.getString("title");
+                    Date dueDate = resultSet.getDate("due_date");
 
                     User user = new User(username, email);
+                    Book book = new Book(bookTitle, dueDate);
+                    user.addBorrowedBook(book);
                     userList.add(user);
                 }
             } catch (SQLException e) {
@@ -93,7 +97,7 @@ public class EmailScheduler {
         public void execute(JobExecutionContext jobExecutionContext) throws JobExecutionException {
             // Logic to calculate due dates and send reminder emails
             try {
-                // Get the list of users and their books from your database or data source
+                // Get the list of users and their borrowed books from your database or data source
                 List<User> users = getUserList();
 
                 // Iterate over each user
@@ -188,6 +192,10 @@ public class EmailScheduler {
         public void setBorrowedBooks(List<Book> borrowedBooks) {
             this.borrowedBooks = borrowedBooks;
         }
+
+        public void addBorrowedBook(Book book) {
+            this.borrowedBooks.add(book);
+        }
     }
 
     public static class Book {
@@ -216,3 +224,4 @@ public class EmailScheduler {
         }
     }
 }
+
