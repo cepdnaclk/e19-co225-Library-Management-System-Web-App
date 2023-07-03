@@ -14,7 +14,6 @@ import java.util.List;
 @RequestMapping("/api/v1/library")
 @PreAuthorize("hasRole('LIBRARIAN')")
 @AllArgsConstructor
-@CrossOrigin(origins = "http://localhost:5173")
 public class LibraryController {
 
     private final LibraryService libraryService;

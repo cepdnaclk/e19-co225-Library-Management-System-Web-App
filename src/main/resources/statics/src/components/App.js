@@ -4,9 +4,11 @@ import './App.css';
 import Header from './Header';
 import AddBook from './AddBook';
 import BookList from './BookList';
+import MemberSearch from './MemberSearch';
 import { Login } from './Login';
 import { Register } from './Register';
-import MemberDashboard from './MemberDashboard';
+import MemberBookReservation from './MemberBookReservation';
+import BookSearchResults from "./BookSearchResults";
 
 function App() {
   const LOCAL_STORAGE_KEY = "books";
@@ -50,7 +52,8 @@ function App() {
               <Route path="/" element={<MemberDashboard/>} />
               <Route path="/addbook" element={<AddBook addBookHandler={addBookHandler} />} />
               <Route path="/booklist" element={<BookList books={books} deleteBookHandler={deleteBookHandler} />} />
-              <Route path="/authenticate" element={
+              <Route path="/membersearch" element={<MemberSearch />} />
+              <Route path="/" element={
                 currentForm === "login"
                   ? <Login onFormSwitch={toggleForm} />
                   : <Register onFormSwitch={toggleForm} />
