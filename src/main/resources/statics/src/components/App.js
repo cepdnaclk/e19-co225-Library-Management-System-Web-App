@@ -10,8 +10,6 @@ import { Register } from './Register';
 import MemberBookReservation from './MemberBookReservation';
 import BookSearchResults from "./BookSearchResults";
 
-
-
 function App() {
   const LOCAL_STORAGE_KEY = "books";
   const [books, setBooks] = useState([]);
@@ -51,6 +49,7 @@ function App() {
           <div style={{ marginTop: "100px" }}>
             <Header />
             <Routes>
+              <Route path="/" element={<MemberDashboard/>} />
               <Route path="/addbook" element={<AddBook addBookHandler={addBookHandler} />} />
               <Route path="/booklist" element={<BookList books={books} deleteBookHandler={deleteBookHandler} />} />
               <Route path="/membersearch" element={<MemberSearch />} />
