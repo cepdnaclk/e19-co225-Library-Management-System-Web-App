@@ -15,7 +15,6 @@ import java.util.List;
 @RequestMapping("/api/v1/book")
 @PreAuthorize("hasRole('MEMBER')")
 @AllArgsConstructor
-@CrossOrigin(origins = "http://localhost:5173")
 public class BookController {
     private final BookService bookService;
 
@@ -28,8 +27,9 @@ public class BookController {
     @PostMapping
     @PreAuthorize("hasAuthority('librarian:create')")
     @Hidden
-    public String addBook(@RequestBody Book book){
-        bookService.addBook(book);
+    public String addBook(@RequestBody BookDto bookDto){
+        bookDto.setAvailable(true);
+        bookService.addBook(bookDto);
         return "Book added";
     }
 
