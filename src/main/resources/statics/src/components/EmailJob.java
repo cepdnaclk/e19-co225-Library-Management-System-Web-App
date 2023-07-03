@@ -45,7 +45,7 @@ public class EmailScheduler {
 
             try {
                 // Create a database connection
-                connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/library", "username", "password");
+                connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/library", "root", "");
 
                 // Execute a query to fetch users
                 statement = connection.createStatement();
@@ -124,8 +124,8 @@ public class EmailScheduler {
         private void sendReminderEmail(String recipientEmail, String bookTitle, Date dueDate) throws MessagingException {
             // Configure the email server properties
             Properties properties = new Properties();
-            properties.put("mail.smtp.host", "your_smtp_host");
-            properties.put("mail.smtp.port", "your_smtp_port");
+            properties.put("mail.smtp.host", "smtp.gmail.com");
+            properties.put("mail.smtp.port", "587");
             properties.put("mail.smtp.auth", "true");
 
             // Create a Session with authentication credentials
