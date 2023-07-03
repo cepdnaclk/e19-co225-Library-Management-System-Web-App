@@ -128,8 +128,8 @@ public class EmailScheduler {
         private void sendReminderEmail(String recipientEmail, String bookTitle, Date dueDate) throws MessagingException {
             // Configure the email server properties
             Properties properties = new Properties();
-            properties.put("mail.smtp.host", "smtp.gmail.com");
-            properties.put("mail.smtp.port", "587");
+            properties.put("mail.smtp.host", "smtp.elasticemail.com");
+            properties.put("mail.smtp.port", "2525");
             properties.put("mail.smtp.auth", "true");
 
             // Create a Session with authentication credentials
