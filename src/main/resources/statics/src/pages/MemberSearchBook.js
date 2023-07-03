@@ -40,7 +40,7 @@ export const MemberSearchBook = () => {
   };
 
   return (
-    <div>
+    <div className="search-background">
       <div className="back-button" onClick={handleBack}>
         Back
       </div>

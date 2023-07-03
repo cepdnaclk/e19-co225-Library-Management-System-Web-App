@@ -1,25 +1,31 @@
 .dashboard {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-  }
-  
-  .button {
-    width: 400px;
-    height: 200px;
-    background-color: #2196f3;
-    color: #ffffff;
-    font-size: 24px;
-    font-weight: bold;
-    text-align: center;
-    line-height: 200px;
-    margin: 10px;
-    cursor: pointer;
-  }
-  
-  .button:hover {
-    background-color: #0d47a1;
-  }
+  background: linear-gradient(to bottom right, #661ebd, #0d00ff);
+  background-image: url('../../images/memberDashboard.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.button {
+  width: 400px;
+  height: 200px;
+  background: linear-gradient(to bottom right, #901719, #080721);
+  color: #ffffff;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  line-height: 200px;
+  margin: 10px;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.button:hover {
+  background: linear-gradient(to bottom right, #0b0b0b, #141514);
+}
+
   
