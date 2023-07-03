@@ -52,7 +52,7 @@ function App() {
               <Route path="/addbook" element={<AddBook addBookHandler={addBookHandler} />} />
               <Route path="/booklist" element={<BookList books={books} deleteBookHandler={deleteBookHandler} />} />
               <Route path="/memberbookreservation" element={<MemberBookReservation />} />
-              <Route path="/book-search-results" component={BookSearchResults} />
+              <Route path="/book-search-results/:memberId/:memberName" element={<BookSearchResults />} />
               <Route path="/" element={
                 currentForm === "login"
                   ? <Login onFormSwitch={toggleForm} />
