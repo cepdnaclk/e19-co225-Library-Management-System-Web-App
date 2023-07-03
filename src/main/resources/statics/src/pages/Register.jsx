@@ -27,7 +27,7 @@ export const Register = () => {
             contact: phone
           };
         
-          axios.post('http://localhost:8080/api/v1/auth/register', formData)
+          axios.post('http://192.168.8.110:8080/api/v1/auth/register', formData)
             .then(response => {
               // Handle the response from the API
               console.log(response.data);
@@ -59,7 +59,7 @@ export const Register = () => {
                         <input value={lastname} onChange={(e) => setLastName(e.target.value)} type="text" placeholder="Last Name" required/>
                         <input value={address} onChange={(e) => setAddress(e.target.value)} type="text" placeholder="Address" required/>
                         <input value={dob} onChange={(e) => setDOB(e.target.value)} type="date" placeholder="Birthday" required/>
-                        <input value={phone} onChange={(e) => setPhone(e.target.value)} type="number" placeholder="Number" required/>
+                        <input value={phone} onChange={(e) => setPhone(e.target.value)} type="number" placeholder="Contact Number" required/>
                         <button className="register-button" type="submit">Register</button>
                     </form>
                 </div>

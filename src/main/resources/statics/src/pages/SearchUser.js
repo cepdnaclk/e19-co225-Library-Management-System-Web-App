@@ -15,7 +15,7 @@ export const UserSearch = () => {
   const handleSearch = () => {
     const token = localStorage.getItem('accessToken');
     
-    fetch('http://localhost:8080/api/v1/library', {
+    fetch('http://192.168.8.110:8080/api/v1/library', {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',

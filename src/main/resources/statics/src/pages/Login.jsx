@@ -19,7 +19,7 @@ export const Login = () => {
             password: pass
           };
         
-          axios.post('http://localhost:8080/api/v1/auth/authenticate', formData)
+          axios.post('http://192.168.8.110:8080/api/v1/auth/authenticate', formData)
             .then(response => {
               console.log(response.data);
 

@@ -18,7 +18,7 @@ export const CurrentBook = () => {
 
     console.log(email);
     
-    fetch('http://localhost:8080/api/v1/borrowing/' + email, {
+    fetch('http://192.168.8.110:8080/api/v1/borrowing/' + email, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
