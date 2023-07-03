@@ -7,6 +7,9 @@ import BookList from './BookList';
 import MemberSearch from './MemberSearch';
 import { Login } from './Login';
 import { Register } from './Register';
+import MemberBookReservation from './MemberBookReservation';
+import BookSearchResults from "./BookSearchResults";
+
 
 
 function App() {
