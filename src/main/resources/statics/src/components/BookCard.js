@@ -2,11 +2,14 @@ import React from 'react';
 import book from '../images/book.png';
 import './BookCard.css';
 
-const BookCard = (props) => {
-  const { id, name, author, shelf } = props.book;
-
+//component which are representing a book card in the library 
+const BookCard =({book,deleteBookHandler}) =>{
+  const { id, name, author, shelf } = book;
+  
+  //Handle delete event
   const handleDelete = () => {
-    props.deleteBookHandler(id);
+    deleteBookHandler(id);
+ 
   };
 
   return (

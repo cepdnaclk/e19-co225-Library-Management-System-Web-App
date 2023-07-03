@@ -2,31 +2,56 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 class AddBook extends React.Component {
+  //Initialize state with empty fields.
   state = {
     name: "",
     author: "",
     shelf: "",
     bookphoto: "",
-    
   };
-
+  
+  //Handle form submission
   add = (e) => {
     e.preventDefault();
-    if (this.state.name === "" || this.state.author === "" || this.state.shelf === "",this.state.photo === "") {
+    const {name,author,shelf,bookphoto}=this.state;
+
+    //Check the field whether they are empty
+    if (this.state.name === "" || this.state.author === "" || this.state.shelf === "" || this.state.bookphoto === "") {
+
       alert("All the fields are mandatory!");
       return;
     }
-
+    
+    //create new object
     const newBook = {
-      name: this.state.name,
-      author: this.state.author,
-      shelf: this.state.shelf,
-      bookphoto: this.state.bookphoto,
+  
+      name,
+      author,
+      shelf,
+      bookphoto,
+    };
+    
+    //Call the addBookHandler 
+    this.props.addBookHandler(newBook);
+    this.setState({ name: "", author: "", shelf: "", bookphoto: "" });
+
+  };
+  
+  //Handle photo selection
+  handlePhotoChange=(e)=> {
+    const file =e.target.files[0];
+     
+     //read and convert photo to base64 format
+     if (file){
+      const reader=new FileReader();
+      reader.onloadend = () => {
+        this.setState({ bookphoto: reader.result });
+      };
+      reader.readAsDataURL(file);
+
+     }
     };
 
-    this.props.addBookHandler(newBook);
-    this.setState({ name: "", author: "", shelf: "",bookphoto: "" });
-  };
 
   render() {
     return (
@@ -54,8 +79,8 @@ class AddBook extends React.Component {
             <input type="int" name="shelf" placeholder="Shelf Number" value={this.state.shelf} onChange={(e) => this.setState({ shelf: e.target.value })} />
           </div>
           <div className="field">
-            <label>Shelf Number</label>
-            <input type="int" name="bookphoto" placeholder="bookphoto" value={this.state.shelf} onChange={(e) => this.setState({ bookphoto: e.target.value })} />
+            <label>Book Photo</label>
+            <input type="file" accept="image/*" onChange={this.handlePhotoChange} />
           </div>
           <div>
           <button type="submit">Add</button>
