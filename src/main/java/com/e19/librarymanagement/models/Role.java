@@ -13,7 +13,13 @@ import static com.e19.librarymanagement.models.Permission.*;
 
 @RequiredArgsConstructor
 public enum Role {
-    MEMBER(Collections.emptySet()),
+    MEMBER(
+            Set.of(
+                    MEMBER_CREATE,
+                    MEMBER_DELETE,
+                    MEMBER_READ,
+                    MEMBER_UPDATE
+            )),
     ADMIN(
             Set.of(
                     ADMIN_READ,
@@ -23,14 +29,22 @@ public enum Role {
                     LIBRARIAN_READ,
                     LIBRARIAN_UPDATE,
                     LIBRARIAN_CREATE,
-                    LIBRARIAN_DELETE
+                    LIBRARIAN_DELETE,
+                    MEMBER_CREATE,
+                    MEMBER_DELETE,
+                    MEMBER_READ,
+                    MEMBER_UPDATE
             )),
     LIBRARIAN(
             Set.of(
                     LIBRARIAN_READ,
                     LIBRARIAN_UPDATE,
                     LIBRARIAN_CREATE,
-                    LIBRARIAN_DELETE
+                    LIBRARIAN_DELETE,
+                    MEMBER_CREATE,
+                    MEMBER_DELETE,
+                    MEMBER_READ,
+                    MEMBER_UPDATE
             ));
 
     @Getter
