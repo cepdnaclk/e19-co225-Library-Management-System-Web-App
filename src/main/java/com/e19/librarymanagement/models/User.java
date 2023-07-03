@@ -17,7 +17,11 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "_user")
+@Table(name = "_user",
+        uniqueConstraints = {
+                @UniqueConstraint(name = "email_unique", columnNames = "email")
+        }
+)
 public class User implements UserDetails {
     @Id
     @SequenceGenerator(
@@ -55,7 +59,6 @@ public class User implements UserDetails {
 
     @Column(
             name = "email",
-            unique = true,
             nullable = false
     )
     private String email;
