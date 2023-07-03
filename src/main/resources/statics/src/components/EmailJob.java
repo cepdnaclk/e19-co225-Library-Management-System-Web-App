@@ -136,7 +136,7 @@ public class EmailScheduler {
             Session session = Session.getInstance(properties, new Authenticator() {
                 @Override
                 protected PasswordAuthentication getPasswordAuthentication() {
-                    return new PasswordAuthentication("your_email", "your_password");
+                    return new PasswordAuthentication("e19324@eng.pdn.ac.lk", "E98C9C54A4775A0BA9CD64FAE38D8E8AD231");
                 }
             });
 
