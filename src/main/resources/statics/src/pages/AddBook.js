@@ -23,7 +23,7 @@ export const AddBook = () => {
           const token = localStorage.getItem('accessToken');
           console.log(formData);
         
-          axios.post('http://localhost:8080/api/v1/book', formData, {
+          axios.post('http://192.168.8.110:8080/api/v1/book', formData, {
             headers: {
               'Content-Type': 'application/json',
               'Authorization': `Bearer ${token}`
