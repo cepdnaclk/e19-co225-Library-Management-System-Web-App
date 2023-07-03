@@ -3,7 +3,8 @@ import React, { useState } from "react";
 
 export const Register = (props) => {
     const [email, setEmail] = useState('');
-    const [pass, setPass] = useState('');
+    const [password, setPassword] = useState('');
+    const [reEnterPassword, setReEnterPassword] = useState('');
     const [name, setName] = useState('');
 
     const handleSubmit = (e) => {
