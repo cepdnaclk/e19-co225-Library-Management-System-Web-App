@@ -4,4 +4,65 @@
     background-position: center;
     padding: 20px;
   }
+
+.ui.form{
+  margin-bottom:20px;
+}
+
+.field{
+  margin-bottom:10px;
+}
+
+input[type="text"]{
+  padding:5px;
+  width:300px;
+}
+
+button[type="submit"]{
+  padding:10px 20px;
+  color: cadetblue #000;
+  cursor:pointers;
+}
   
+.empty-message{
+  font-style:italic;
+  margin-top:10px;
+}
+
+.ui.celled.list{
+  padding:0;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.item img {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+}
+
+.content-container {
+  flex-grow: 1;
+}
+
+.header {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.author, .shelf {
+  margin-top: 5px;
+  font-size: 14px;
+  color: #888;
+}
+
+.trash-icon {
+  font-size: 18px;
+  color: #888;
+  cursor: pointer;
+}
