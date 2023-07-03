@@ -2,11 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 class AddBook extends React.Component {
-<<<<<<< HEAD
-  //Initialize state with empty fields
-=======
   //Initialize state with empty fields.
->>>>>>> 23a2895fa0c6c74cb74dc2d40733c2536af9e4e8
   state = {
     name: "",
     author: "",
@@ -21,6 +17,7 @@ class AddBook extends React.Component {
 
     //Check the field whether they are empty
     if (this.state.name === "" || this.state.author === "" || this.state.shelf === "" || this.state.bookphoto === "") {
+
       alert("All the fields are mandatory!");
       return;
     }
@@ -37,6 +34,7 @@ class AddBook extends React.Component {
     //Call the addBookHandler 
     this.props.addBookHandler(newBook);
     this.setState({ name: "", author: "", shelf: "", bookphoto: "" });
+
   };
   
   //Handle photo selection
