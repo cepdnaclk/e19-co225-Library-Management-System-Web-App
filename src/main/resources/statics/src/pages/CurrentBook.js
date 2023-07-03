@@ -28,11 +28,13 @@ export const CurrentBook = () => {
       .then(response => response.json())
       .then(data => {
         // Save the data in the array
+
         setSearchResults(data);
         console.log(data);
       })
       .catch(error => {
-        window.alert(error)
+        setSearchResults('empty');
+        window.alert("No book is found");
       });
   };
 

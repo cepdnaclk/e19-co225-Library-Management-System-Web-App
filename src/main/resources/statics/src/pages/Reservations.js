@@ -29,6 +29,7 @@ export const Reservation = () => {
             .then(response => {
               // Handle the response from the API
               console.log(response.data);
+              window.alert(response.data);
             })
             .catch(error => {
               // Handle any errors that occurred during the request
