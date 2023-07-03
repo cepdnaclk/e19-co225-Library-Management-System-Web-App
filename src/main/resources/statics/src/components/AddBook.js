@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 class AddBook extends React.Component {
-  //Initialize state with empty fields
+  //Initialize state with empty fields.
   state = {
     name: "",
     author: "",
