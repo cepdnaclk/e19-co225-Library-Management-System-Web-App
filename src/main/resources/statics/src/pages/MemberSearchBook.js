@@ -15,7 +15,7 @@ export const MemberSearchBook = () => {
   const handleSearch = () => {
     const token = localStorage.getItem('accessToken');
     
-    fetch('http://localhost:8080/api/v1/book', {
+    fetch('http://192.168.8.110:8080/api/v1/book', {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -40,7 +40,7 @@ export const MemberSearchBook = () => {
   };
 
   return (
-    <div>
+    <div className="search-background">
       <div className="back-button" onClick={handleBack}>
         Back
       </div>
