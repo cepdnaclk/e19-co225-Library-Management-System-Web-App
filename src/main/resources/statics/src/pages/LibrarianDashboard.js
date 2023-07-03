@@ -30,6 +30,12 @@ export const LibrarianDashboard = () => {
     navigate('/librarian/reservation')
   };
 
+  const navigateToBorrowingSearch = () => {
+    // Code to navigate to the search book page
+    console.log('Navigating to borrowing search');
+    navigate('/librarian/search-borrowing')
+  };
+
   return (
     <div className="dashboard">
       <div className="button" onClick={navigateToAddBook}>
@@ -43,6 +49,9 @@ export const LibrarianDashboard = () => {
       </div>
       <div className="button" onClick={navigateToBookReservation}>
         Book Reservation
+      </div>
+      <div className="button" onClick={navigateToBorrowingSearch}>
+        Search Borrowings
       </div>
     </div>
   );

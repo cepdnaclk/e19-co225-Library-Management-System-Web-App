@@ -10,6 +10,7 @@ import { Reservation } from "./pages/Reservations";
 import { AddBook } from "./pages/AddBook";
 import { LibrarianSearchBook } from "./pages/LibrarianSearchBook";
 import { UserSearch } from "./pages/SearchUser";
+import { BorrowingSearch } from "./pages/BorrowingSearch";
 
 function App() {
 
@@ -20,6 +21,7 @@ function App() {
               <Route path="member/search-book" element={<MemberSearchBook/>}/>
               <Route path="member/current-book" element={<CurrentBook/>}/>
               <Route path="member" element={<MemberDashboard/>}/>
+              <Route path="librarian/search-borrowing" element={<BorrowingSearch/>}/>
               <Route path="librarian/search-user" element={<UserSearch/>}/>
               <Route path="librarian/add-book" element={<AddBook/>}/>
               <Route path="librarian/search-book" element={<LibrarianSearchBook/>}/>
