@@ -54,8 +54,8 @@ export const Login = () => {
                         </div>
                         <h1 className="heading-login">Sign in</h1>
                         <br></br>
-                        <input value={email} onChange={(e) => setEmail(e.target.value)} type="email" placeholder="Email" />
-                        <input value={pass} onChange={(e) => setPass(e.target.value)} type="password" placeholder="Password" />
+                        <input value={email} onChange={(e) => setEmail(e.target.value)} type="email" placeholder="Email" required/>
+                        <input value={pass} onChange={(e) => setPass(e.target.value)} type="password" placeholder="Password" required/>
                         <br></br>
                         <button className="sign-in" type="submit">Sign In</button>
                     </form>

@@ -95,7 +95,7 @@ export const AddBook = () => {
         </div>
         <div className="input-group">
             <label className="label-book-title" htmlFor="bookTitle">
-                Book Author<br></br>
+                Publication Year<br></br>
             </label>
             <input
                 type="text"

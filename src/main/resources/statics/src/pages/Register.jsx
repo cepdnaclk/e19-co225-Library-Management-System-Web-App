@@ -27,7 +27,7 @@ export const Register = () => {
             contact: phone
           };
         
-          axios.post('http://localhost:8080/api/v1/auth/register', formData)
+          axios.post('http://192.168.8.110:8080/api/v1/auth/register', formData)
             .then(response => {
               // Handle the response from the API
               console.log(response.data);
@@ -54,12 +54,12 @@ export const Register = () => {
                     <form className="form" onSubmit={handleSubmit}>
                         <h1 className="heading-register">Register</h1>
                         <input value={email} onChange={(e) => setEmail(e.target.value)} type="email" placeholder="Email" required/>
-                        <input value={pass} onChange={(e) => setPass(e.target.value)} type="password" placeholder="Password" />
-                        <input value={firstname} onChange={(e) => setFirstName(e.target.value)} type="text" placeholder="First Name" />
-                        <input value={lastname} onChange={(e) => setLastName(e.target.value)} type="text" placeholder="Last Name" />
-                        <input value={address} onChange={(e) => setAddress(e.target.value)} type="text" placeholder="Address" />
-                        <input value={dob} onChange={(e) => setDOB(e.target.value)} type="date" placeholder="Birthday" />
-                        <input value={phone} onChange={(e) => setPhone(e.target.value)} type="number" placeholder="Number" />
+                        <input value={pass} onChange={(e) => setPass(e.target.value)} type="password" placeholder="Password" required/>
+                        <input value={firstname} onChange={(e) => setFirstName(e.target.value)} type="text" placeholder="First Name" required/>
+                        <input value={lastname} onChange={(e) => setLastName(e.target.value)} type="text" placeholder="Last Name" required/>
+                        <input value={address} onChange={(e) => setAddress(e.target.value)} type="text" placeholder="Address" required/>
+                        <input value={dob} onChange={(e) => setDOB(e.target.value)} type="date" placeholder="Birthday" required/>
+                        <input value={phone} onChange={(e) => setPhone(e.target.value)} type="number" placeholder="Number" required/>
                         <button className="register-button" type="submit">Register</button>
                     </form>
                 </div>
