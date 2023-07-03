@@ -27,7 +27,7 @@ export const Register = () => {
             contact: phone
           };
         
-          axios.post('http://192.168.8.110:8080/api/v1/auth/register', formData)
+          axios.post('http://localhost:8080/api/v1/auth/register', formData)
             .then(response => {
               // Handle the response from the API
               console.log(response.data);
